@@ -1,0 +1,263 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Contact">
+  <section class="section">
+    <div class="w-layout-blockcontainer container w-container">
+      <div class="contact-page-wrapper">
+        <div class="contact-header">
+          <div class="no-wrap">
+            <h1 class="heading-cta line-height-135 text-weight-regular">
+              Get in Touch
+            </h1>
+          </div>
+          <div class="max-width-40ch">
+            <p class="text-size-regular line-height-150 opacity-60">
+              Have a project in mind or just want to connect? Fill out the form
+              below and I'll get back to you.
+            </p>
+          </div>
+        </div>
+
+        <div id="contact-form-wrapper">
+          <form
+            id="contact-form"
+            action="https://formspree.io/f/mzdjbaej"
+            method="POST"
+            class="contact-form"
+          >
+            <div class="form-field-wrapper">
+              <label for="name" class="text-size-small caps text-weight-medium"
+                >Name</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="form-input"
+                placeholder="Your name"
+              />
+            </div>
+            <div class="form-field-wrapper">
+              <label for="email" class="text-size-small caps text-weight-medium"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="form-input"
+                placeholder="your@email.com"
+              />
+            </div>
+            <div class="form-field-wrapper">
+              <label
+                for="message"
+                class="text-size-small caps text-weight-medium">Message</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                required
+                class="form-input form-textarea"
+                placeholder="Tell me about your project..."
+                rows="6"></textarea>
+            </div>
+            <input
+              type="text"
+              name="_gotcha"
+              style="display:none"
+              tabindex="-1"
+              autocomplete="off"
+            />
+            <div class="form-submit-wrapper">
+              <button
+                type="submit"
+                class="primary-button is-secondary form-button"
+              >
+                <div class="button-icon">
+                  <img
+                    src="https://cdn.prod.website-files.com/689c9d9cd3a17615f1ee5e65/689c9d9dd3a17615f1ee5ec7_Secondary%20Button%20Icon.svg"
+                    loading="lazy"
+                    alt="Icon"
+                  />
+                </div>
+                <div class="button-text-wrapper">
+                  <div class="text-size-regular">Send Message</div>
+                  <div class="text-size-regular">Send Message</div>
+                </div>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div id="thank-you-message" style="display: none;">
+          <div class="thank-you-content">
+            <h2 class="heading-cta line-height-135 text-weight-regular">
+              Thank you!
+            </h2>
+            <div class="max-width-40ch">
+              <p class="text-size-regular line-height-150 opacity-60">
+                Your message has been sent successfully. I'll get back to you as
+                soon as possible.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .contact-page-wrapper {
+      padding-top: 8rem;
+      padding-bottom: 4rem;
+      min-height: 70vh;
+    }
+
+    .contact-header {
+      margin-bottom: 3.5rem;
+    }
+
+    .contact-header h1 {
+      margin-bottom: 1rem;
+    }
+
+    .max-width-40ch {
+      max-width: 40ch;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+      max-width: 540px;
+    }
+
+    .form-field-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-field-wrapper label {
+      letter-spacing: 0.05em;
+    }
+
+    .form-input {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(239, 238, 236, 0.2);
+      padding: 0.75rem 0;
+      color: #efeeec;
+      font-family: inherit;
+      font-size: 1rem;
+      line-height: 1.5;
+      outline: none;
+      transition: border-color 0.3s ease;
+      width: 100%;
+      resize: none;
+    }
+
+    .form-input::placeholder {
+      color: rgba(239, 238, 236, 0.3);
+    }
+
+    .form-input:focus {
+      border-bottom-color: rgba(239, 238, 236, 0.6);
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      border: 1px solid rgba(239, 238, 236, 0.2);
+      border-radius: 0;
+      padding: 0.75rem;
+      margin-top: 0.25rem;
+    }
+
+    .form-textarea:focus {
+      border-color: rgba(239, 238, 236, 0.6);
+    }
+
+    .form-submit-wrapper {
+      padding-top: 0.5rem;
+    }
+
+    .form-button {
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+    }
+
+    .thank-you-content {
+      padding-top: 2rem;
+    }
+
+    .thank-you-content h2 {
+      margin-bottom: 1rem;
+    }
+
+    /* Fade transition */
+    #contact-form-wrapper {
+      transition: opacity 0.4s ease;
+    }
+
+    #thank-you-message {
+      transition: opacity 0.4s ease;
+    }
+
+    #thank-you-message.is-visible {
+      display: block !important;
+      opacity: 1;
+    }
+  </style>
+
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", function () {
+      var form = document.getElementById("contact-form");
+      var formWrapper = document.getElementById("contact-form-wrapper");
+      var thankYou = document.getElementById("thank-you-message");
+
+      if (form) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          var formData = new FormData(form);
+
+          fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+              Accept: "application/json",
+            },
+          })
+            .then(function (response) {
+              if (response.ok) {
+                formWrapper.style.opacity = "0";
+                setTimeout(function () {
+                  formWrapper.style.display = "none";
+                  thankYou.style.display = "block";
+                  thankYou.style.opacity = "0";
+                  setTimeout(function () {
+                    thankYou.style.opacity = "1";
+                  }, 50);
+                }, 400);
+              } else {
+                alert(
+                  "There was an issue sending your message. Please try again.",
+                );
+              }
+            })
+            .catch(function () {
+              alert(
+                "There was an issue sending your message. Please try again.",
+              );
+            });
+        });
+      }
+    });
+  </script>
+</BaseLayout>
