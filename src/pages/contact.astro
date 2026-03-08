@@ -32,82 +32,79 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               name="access_key"
               value="381787f7-c8af-4894-83c1-493556f7e6d2"
             />
-            <div
-              class="h-captcha"
-              data-captcha="true"
-              data-theme="dark"
-              data-size="compact"
+          </form>
+          <div class="form-field-wrapper">
+            <label for="name" class="text-size-small caps text-weight-medium"
+              >Name</label
             >
-            </div>
-            <div class="form-field-wrapper">
-              <label for="name" class="text-size-small caps text-weight-medium"
-                >Name</label
-              >
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                class="form-input"
-                placeholder="Full Name"
-              />
-            </div>
-            <div class="form-field-wrapper">
-              <label for="email" class="text-size-small caps text-weight-medium"
-                >Email</label
-              >
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                class="form-input"
-                placeholder="your@email.com"
-              />
-            </div>
-            <div class="form-field-wrapper">
-              <label
-                for="message"
-                class="text-size-small caps text-weight-medium">Message</label
-              >
-              <textarea
-                id="message"
-                name="message"
-                required
-                class="form-input form-textarea"
-                placeholder="Tell me about your project..."
-                rows="6"></textarea>
-            </div>
             <input
               type="text"
-              name="_gotcha"
-              style="display:none"
-              tabindex="-1"
-              autocomplete="off"
+              id="name"
+              name="name"
+              required
+              class="form-input"
+              placeholder="Full Name"
             />
-            <div class="form-submit-wrapper">
-              <button
-                type="submit"
-                class="primary-button is-secondary form-button"
-              >
-                <div class="button-icon">
-                  <img
-                    src="https://cdn.prod.website-files.com/689c9d9cd3a17615f1ee5e65/689c9d9dd3a17615f1ee5ec7_Secondary%20Button%20Icon.svg"
-                    loading="lazy"
-                    alt="Icon"
-                  />
+          </div>
+          <div class="form-field-wrapper">
+            <label for="email" class="text-size-small caps text-weight-medium"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="form-input"
+              placeholder="your@email.com"
+            />
+          </div>
+          <div class="form-field-wrapper">
+            <label for="message" class="text-size-small caps text-weight-medium"
+              >Message</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              required
+              class="form-input form-textarea"
+              placeholder="Tell me about your project..."
+              rows="6"></textarea>
+          </div>
+          <input
+            type="text"
+            name="_gotcha"
+            style="display:none"
+            tabindex="-1"
+            autocomplete="off"
+          />
+          <div class="form-submit-wrapper">
+            <button
+              type="submit"
+              class="primary-button is-secondary form-button"
+            >
+              <div class="button-icon">
+                <img
+                  src="https://cdn.prod.website-files.com/689c9d9cd3a17615f1ee5e65/689c9d9dd3a17615f1ee5ec7_Secondary%20Button%20Icon.svg"
+                  loading="lazy"
+                  alt="Icon"
+                />
+              </div>
+              <div class="button-text-wrapper">
+                <div class="text-size-regular">Send Message</div>
+                <div class="text-size-regular">Send Message</div>
+                <script src="https://web3forms.com/client/script.js" async defer
+                ></script>
+                <div
+                  class="h-captcha"
+                  data-captcha="true"
+                  data-theme="dark"
+                  data-size="compact"
+                >
                 </div>
-                <div class="button-text-wrapper">
-                  <div class="text-size-regular">Send Message</div>
-                  <div class="text-size-regular">Send Message</div>
-                  <script
-                    src="https://web3forms.com/client/script.js"
-                    async
-                    defer></script>
-                </div>
-              </button>
-            </div>
-          </form>
+              </div>
+            </button>
+          </div>
         </div>
 
         <div id="thank-you-message" style="display: none;">
