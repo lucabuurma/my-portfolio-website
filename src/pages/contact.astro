@@ -23,7 +23,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <div id="contact-form-wrapper">
           <form
             id="contact-form"
-            action="https://formspree.io/f/mzdjbaej"
+            action="https://api.web3forms.com/submit"
             method="POST"
             class="contact-form"
           >
@@ -37,7 +37,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 name="name"
                 required
                 class="form-input"
-                placeholder="Your name"
+                placeholder="Full Name"
               />
             </div>
             <div class="form-field-wrapper">
@@ -72,6 +72,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               style="display:none"
               tabindex="-1"
               autocomplete="off"
+              <input
+              type="hidden"
+              name="access_key"
+              value="381787f7-c8af-4894-83c1-493556f7e6d2"
+            />
             />
             <div class="form-submit-wrapper">
               <button
