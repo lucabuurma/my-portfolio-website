@@ -27,6 +27,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             method="POST"
             class="contact-form"
           >
+            <input
+              type="hidden"
+              name="access_key"
+              value="381787f7-c8af-4894-83c1-493556f7e6d2"
+            />
             <div class="form-field-wrapper">
               <label for="name" class="text-size-small caps text-weight-medium"
                 >Name</label
@@ -72,11 +77,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               style="display:none"
               tabindex="-1"
               autocomplete="off"
-              <input
-              type="hidden"
-              name="access_key"
-              value="381787f7-c8af-4894-83c1-493556f7e6d2"
-            />
             />
             <div class="form-submit-wrapper">
               <button
