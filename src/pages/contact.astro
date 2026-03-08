@@ -32,6 +32,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               name="access_key"
               value="381787f7-c8af-4894-83c1-493556f7e6d2"
             />
+            <div
+              class="h-captcha"
+              data-captcha="true"
+              data-theme="dark"
+              data-size="compact"
+            >
+            </div>
             <div class="form-field-wrapper">
               <label for="name" class="text-size-small caps text-weight-medium"
                 >Name</label
@@ -93,6 +100,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 <div class="button-text-wrapper">
                   <div class="text-size-regular">Send Message</div>
                   <div class="text-size-regular">Send Message</div>
+                  <script
+                    src="https://web3forms.com/client/script.js"
+                    async
+                    defer></script>
                 </div>
               </button>
             </div>
