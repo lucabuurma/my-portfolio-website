@@ -32,59 +32,65 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               name="access_key"
               value="381787f7-c8af-4894-83c1-493556f7e6d2"
             />
-          </form>
-          <div class="form-field-wrapper">
-            <label for="name" class="text-size-small caps text-weight-medium"
-              >Name</label
-            >
+
+            <div class="form-field-wrapper">
+              <label for="name" class="text-size-small caps text-weight-medium"
+                >Name</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="form-input"
+                placeholder="Full Name"
+              />
+            </div>
+
+            <div class="form-field-wrapper">
+              <label for="email" class="text-size-small caps text-weight-medium"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="form-input"
+                placeholder="your@email.com"
+              />
+            </div>
+
+            <div class="form-field-wrapper">
+              <label
+                for="message"
+                class="text-size-small caps text-weight-medium">Message</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                required
+                class="form-input form-textarea"
+                placeholder="Tell me about your project..."
+                rows="6"></textarea>
+            </div>
+
             <input
               type="text"
-              id="name"
-              name="name"
-              required
-              class="form-input"
-              placeholder="Full Name"
+              name="_gotcha"
+              style="display:none"
+              tabindex="-1"
+              autocomplete="off"
             />
-          </div>
-          <div class="form-field-wrapper">
-            <label for="email" class="text-size-small caps text-weight-medium"
-              >Email</label
+
+            <div
+              class="h-captcha"
+              data-captcha="true"
+              data-theme="dark"
+              data-size="compact"
             >
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              class="form-input"
-              placeholder="your@email.com"
-            />
-          </div>
-          <div class="form-field-wrapper">
-            <label for="message" class="text-size-small caps text-weight-medium"
-              >Message</label
-            >
-            <textarea
-              id="message"
-              name="message"
-              required
-              class="form-input form-textarea"
-              placeholder="Tell me about your project..."
-              rows="6"></textarea>
-          </div>
-          <input
-            type="text"
-            name="_gotcha"
-            style="display:none"
-            tabindex="-1"
-            autocomplete="off"
-          />
-          <div
-            class="h-captcha"
-            data-captcha="true"
-            data-theme="dark"
-            data-size="compact"
-          >
-            <br /><br />
+            </div>
+
             <div class="form-submit-wrapper">
               <button
                 type="submit"
@@ -100,180 +106,175 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 <div class="button-text-wrapper">
                   <div class="text-size-regular">Send Message</div>
                   <div class="text-size-regular">Send Message</div>
-                  <script
-                    src="https://web3forms.com/client/script.js"
-                    async
-                    defer></script>
                 </div>
               </button>
             </div>
-          </div>
+          </form>
         </div>
 
-        <div id="thank-you-message" style="display: none;">
-          <div class="thank-you-content">
-            <h2 class="heading-cta line-height-135 text-weight-regular">
-              Thank you!
-            </h2>
-            <div class="max-width-40ch">
-              <p class="text-size-regular line-height-150 opacity-60">
-                Your message has been sent successfully. I'll get back to you as
-                soon as possible.
-              </p>
-            </div>
-          </div>
-        </div>
+        <script src="https://web3forms.com/client/script.js" async defer
+        ></script>
       </div>
     </div>
   </section>
+</BaseLayout>
 
-  <style>
-    .contact-page-wrapper {
-      padding-top: 8rem;
-      padding-bottom: 4rem;
-      min-height: 70vh;
-    }
+<div id="thank-you-message" style="display: none;">
+  <div class="thank-you-content">
+    <h2 class="heading-cta line-height-135 text-weight-regular">Thank you!</h2>
+    <div class="max-width-40ch">
+      <p class="text-size-regular line-height-150 opacity-60">
+        Your message has been sent successfully. I'll get back to you as soon as
+        possible.
+      </p>
+    </div>
+  </div>
+</div>
 
-    .contact-header {
-      margin-bottom: 3.5rem;
-    }
+<style>
+  .contact-page-wrapper {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+    min-height: 70vh;
+  }
 
-    .contact-header h1 {
-      margin-bottom: 1rem;
-    }
+  .contact-header {
+    margin-bottom: 3.5rem;
+  }
 
-    .max-width-40ch {
-      max-width: 40ch;
-    }
+  .contact-header h1 {
+    margin-bottom: 1rem;
+  }
 
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.75rem;
-      max-width: 540px;
-    }
+  .max-width-40ch {
+    max-width: 40ch;
+  }
 
-    .form-field-wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    max-width: 540px;
+  }
 
-    .form-field-wrapper label {
-      letter-spacing: 0.05em;
-    }
+  .form-field-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
-    .form-input {
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid rgba(239, 238, 236, 0.2);
-      padding: 0.75rem 0;
-      color: #efeeec;
-      font-family: inherit;
-      font-size: 1rem;
-      line-height: 1.5;
-      outline: none;
-      transition: border-color 0.3s ease;
-      width: 100%;
-      resize: none;
-    }
+  .form-field-wrapper label {
+    letter-spacing: 0.05em;
+  }
 
-    .form-input::placeholder {
-      color: rgba(239, 238, 236, 0.3);
-    }
+  .form-input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(239, 238, 236, 0.2);
+    padding: 0.75rem 0;
+    color: #efeeec;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.5;
+    outline: none;
+    transition: border-color 0.3s ease;
+    width: 100%;
+    resize: none;
+  }
 
-    .form-input:focus {
-      border-bottom-color: rgba(239, 238, 236, 0.6);
-    }
+  .form-input::placeholder {
+    color: rgba(239, 238, 236, 0.3);
+  }
 
-    .form-textarea {
-      min-height: 120px;
-      border: 1px solid rgba(239, 238, 236, 0.2);
-      border-radius: 0;
-      padding: 0.75rem;
-      margin-top: 0.25rem;
-    }
+  .form-input:focus {
+    border-bottom-color: rgba(239, 238, 236, 0.6);
+  }
 
-    .form-textarea:focus {
-      border-color: rgba(239, 238, 236, 0.6);
-    }
+  .form-textarea {
+    min-height: 120px;
+    border: 1px solid rgba(239, 238, 236, 0.2);
+    border-radius: 0;
+    padding: 0.75rem;
+    margin-top: 0.25rem;
+  }
 
-    .form-submit-wrapper {
-      padding-top: 0.5rem;
-    }
+  .form-textarea:focus {
+    border-color: rgba(239, 238, 236, 0.6);
+  }
 
-    .form-button {
-      cursor: pointer;
-      border: none;
-      font-family: inherit;
-    }
+  .form-submit-wrapper {
+    padding-top: 0.5rem;
+  }
 
-    .thank-you-content {
-      padding-top: 2rem;
-    }
+  .form-button {
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+  }
 
-    .thank-you-content h2 {
-      margin-bottom: 1rem;
-    }
+  .thank-you-content {
+    padding-top: 2rem;
+  }
 
-    /* Fade transition */
-    #contact-form-wrapper {
-      transition: opacity 0.4s ease;
-    }
+  .thank-you-content h2 {
+    margin-bottom: 1rem;
+  }
 
-    #thank-you-message {
-      transition: opacity 0.4s ease;
-    }
+  /* Fade transition */
+  #contact-form-wrapper {
+    transition: opacity 0.4s ease;
+  }
 
-    #thank-you-message.is-visible {
-      display: block !important;
-      opacity: 1;
-    }
-  </style>
+  #thank-you-message {
+    transition: opacity 0.4s ease;
+  }
 
-  <script is:inline>
-    document.addEventListener("DOMContentLoaded", function () {
-      var form = document.getElementById("contact-form");
-      var formWrapper = document.getElementById("contact-form-wrapper");
-      var thankYou = document.getElementById("thank-you-message");
+  #thank-you-message.is-visible {
+    display: block !important;
+    opacity: 1;
+  }
+</style>
 
-      if (form) {
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+    var form = document.getElementById("contact-form");
+    var formWrapper = document.getElementById("contact-form-wrapper");
+    var thankYou = document.getElementById("thank-you-message");
 
-          var formData = new FormData(form);
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-          fetch(form.action, {
-            method: "POST",
-            body: formData,
-            headers: {
-              Accept: "application/json",
-            },
-          })
-            .then(function (response) {
-              if (response.ok) {
-                formWrapper.style.opacity = "0";
+        var formData = new FormData(form);
+
+        fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json",
+          },
+        })
+          .then(function (response) {
+            if (response.ok) {
+              formWrapper.style.opacity = "0";
+              setTimeout(function () {
+                formWrapper.style.display = "none";
+                thankYou.style.display = "block";
+                thankYou.style.opacity = "0";
                 setTimeout(function () {
-                  formWrapper.style.display = "none";
-                  thankYou.style.display = "block";
-                  thankYou.style.opacity = "0";
-                  setTimeout(function () {
-                    thankYou.style.opacity = "1";
-                  }, 50);
-                }, 400);
-              } else {
-                alert(
-                  "There was an issue sending your message. Please try again.",
-                );
-              }
-            })
-            .catch(function () {
+                  thankYou.style.opacity = "1";
+                }, 50);
+              }, 400);
+            } else {
               alert(
                 "There was an issue sending your message. Please try again.",
               );
-            });
-        });
-      }
-    });
-  </script>
-</BaseLayout>
+            }
+          })
+          .catch(function () {
+            alert("There was an issue sending your message. Please try again.");
+          });
+      });
+    }
+  });
+</script>
